@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "BreezeTTS2",
+    "description": "Adds a read-aloud button to every assistant reply and synthesizes it through your Breeze TTS endpoint."
+  }
+}

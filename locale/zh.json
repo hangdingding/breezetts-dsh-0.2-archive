@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "BreezeTTS2",
+    "description": "在每条助手回复的操作栏添加朗读按钮，通过你配置的 Breeze TTS 接口合成语音并播放。"
+  }
+}

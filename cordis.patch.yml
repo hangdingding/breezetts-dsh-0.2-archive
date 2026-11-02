@@ -1,0 +1,35 @@
+# Breeze 语音朗读 Bundle。
+# 下面的 config 是本插件唯一的配置入口：改这里即可换密钥、音色与接口。
+# 匹配覆盖会替换整段 config，所以覆盖时请把需要的字段写全（缺省值见 index.js 的 DEFAULTS）。
+- insert:
+    - id: breezetts-dsh
+      name: 'breezetts-dsh'
+      config:
+        # breezeblue = 官方 Breeze Developer API；openai = 自建 OpenAI 兼容 /audio/speech。
+        protocol: breezeblue
+        baseUrl: 'https://api.breeze.blue'
+
+        # 必填：Breeze 开发者控制台里的 API Key（brz_ 开头）。
+        # https://breezeblue.ai/app/developer/api-keys
+        apiKey: ''
+
+        # 必填：音色 ID（voc_ 开头）。在 Studio 选好音色后复制，或 GET /breeze-voice/voices 查看。
+        voiceId: 'voc_u3nxkd5578wc'
+
+        # 可空：留空时由服务端按语言自动选择模型。
+        modelId: ''
+        # 可空：ISO 639-1 两字母代码（zh、en…）；留空则由模型自动判断语言。
+        languageCode: 'zh'
+
+        # 输出音频格式：mp3 / wav / flac / pcm / aac / opus，或带采样率的写法。
+        outputFormat: 'mp3'
+        # 0.5–2.0，1 为原速。
+        speed: 1
+        # 可空：表演风格指令，如“温和、放慢一点”。用与正文相同的语言书写。
+        instructions: ''
+
+        # 可空：音色头像图片地址（http/https）。留空则用音色名生成文字头像。
+        avatarUrl: ''
+
+        # 单次请求上限；官方默认 1000 字，浏览器端会按 800 字自动分段。
+        maxChars: 2000

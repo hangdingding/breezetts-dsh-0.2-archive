@@ -1,0 +1,7 @@
+# 本地状态与构建产物，不要提交
+settings.json
+debug.log
+*.tgz
+*.zip
+node_modules/
+.DS_Store
