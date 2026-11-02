@@ -4,10 +4,10 @@
 
 ## 仓库结构
 
-插件包已经放在仓库根目录（`package.json` 在根），这样 `github:用户/breeze-voice` 能直接解析到包：
+插件包已经放在仓库根目录（`package.json` 在根），这样 `github:用户/breezetts-dsh` 能直接解析到包：
 
 ```
-breeze-voice/
+breezetts-dsh/
 ├── package.json        # dsh.bundle.patch + dsh.client
 ├── cordis.patch.yml
 ├── index.js            # Host 半
@@ -24,12 +24,12 @@ breeze-voice/
 ## 一、发布到 GitHub
 
 ```bash
-cd breeze-voice
+cd breezetts-dsh
 git init
 git add .
 git commit -m "feat: BreezeTTS2 DSH plugin v1.0.0"
 git branch -M main
-git remote add origin git@github.com:YOUR_NAME/breeze-voice.git
+git remote add origin git@github.com:YOUR_NAME/breezetts-dsh.git
 git push -u origin main
 ```
 
@@ -46,7 +46,7 @@ git tag v1.0.1
 git push origin main --tags
 ```
 
-在 GitHub 的 Releases 页面新建 `v1.0.1`，把 `dist/local-breeze-voice-1.0.1.tgz` 作为附件上传。
+在 GitHub 的 Releases 页面新建 `v1.0.1`，把 `dist/breezetts-dsh-1.0.1.tgz` 作为附件上传。
 （有 `gh` CLI 的话：`gh release create v1.0.1 dist/*.tgz --title v1.0.1`）
 
 ## 二、同步到 Gitee
@@ -57,7 +57,7 @@ git push origin main --tags
 2. **双远端推送**：
 
 ```bash
-git remote add gitee git@gitee.com:YOUR_NAME/breeze-voice.git
+git remote add gitee git@gitee.com:YOUR_NAME/breezetts-dsh.git
 git push gitee main --tags
 ```
 
@@ -70,33 +70,33 @@ Gitee 的「发行版」页面上传同一个 `.tgz` 附件。
 在 DSH 的插件安装入口（或让 Agent 调 `plugin_manager install_bundle`）使用安装标识：
 
 ```
-github:YOUR_NAME/breeze-voice
-github:YOUR_NAME/breeze-voice#v1.0.1        # 锁定版本
-git+https://gitee.com/YOUR_NAME/breeze-voice.git
-git+https://gitee.com/YOUR_NAME/breeze-voice.git#v1.0.1
+github:YOUR_NAME/breezetts-dsh
+github:YOUR_NAME/breezetts-dsh#v1.0.1        # 锁定版本
+git+https://gitee.com/YOUR_NAME/breezetts-dsh.git
+git+https://gitee.com/YOUR_NAME/breezetts-dsh.git#v1.0.1
 ```
 
 `install_bundle` 会把标识交给 pnpm 解析；纯 JS 包没有构建步骤，clone 后即可用。
 
 ### 方式 B：Release 压缩包
 
-把 `local-breeze-voice-x.y.z.tgz` 的下载地址给用户：
+把 `breezetts-dsh-x.y.z.tgz` 的下载地址给用户：
 
 ```bash
-tar -xzf local-breeze-voice-1.0.1.tgz -C ~/Downloads
+tar -xzf breezetts-dsh-1.0.1.tgz -C ~/Downloads
 # 然后在插件管理页安装 ~/Downloads/package 这个目录
 ```
 
 ### 方式 C：npm（可选）
 
-需要先把 `package.json` 里的 `"private": true` 去掉，并改成公开的包名（例如 `@breezeblue/dsh-breeze-voice`）：
+需要先把 `package.json` 里的 `"private": true` 去掉，并改成公开的包名（例如 `@breezeblue/breezetts-dsh`）：
 
 ```bash
 npm login
 npm publish --access public
 ```
 
-之后用户用包名安装，例如 `@breezeblue/dsh-breeze-voice` 或 `@breezeblue/dsh-breeze-voice@1.0.1`。
+之后用户用包名安装，例如 `@breezeblue/breezetts-dsh` 或 `@breezeblue/breezetts-dsh@1.0.1`。
 
 ## 四、WorkBuddy 技能包
 

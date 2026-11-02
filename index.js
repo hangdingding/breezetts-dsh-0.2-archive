@@ -144,67 +144,67 @@ export function apply(ctx, config = {}) {
     kind: 'exact',
     path: SPEAK_PATH,
     handler: (req, res) => handleSpeak(state.settings, req, res),
-  }), 'breeze-voice: speak route');
+  }), 'breezetts-dsh: speak route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: VOICES_PATH,
     handler: (req, res) => handleVoices(state.settings, req, res),
-  }), 'breeze-voice: voices route');
+  }), 'breezetts-dsh: voices route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: VOICE_PATH,
     handler: (req, res) => handleVoice(state.settings, req, res),
-  }), 'breeze-voice: voice info route');
+  }), 'breezetts-dsh: voice info route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: AVATAR_PATH,
     handler: (req, res) => handleAvatar(state.settings, req, res),
-  }), 'breeze-voice: avatar route');
+  }), 'breezetts-dsh: avatar route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: STREAM_PATH,
     handler: (req, res) => handleStream(state.settings, req, res),
-  }), 'breeze-voice: stream route');
+  }), 'breezetts-dsh: stream route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: CONFIG_PATH,
     handler: (req, res) => handleConfig(state, req, res),
-  }), 'breeze-voice: config route');
+  }), 'breezetts-dsh: config route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: PREVIEW_PATH,
     handler: (req, res) => handlePreview(state.settings, req, res),
-  }), 'breeze-voice: preview route');
+  }), 'breezetts-dsh: preview route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: BALANCE_PATH,
     handler: (req, res) => handleBalance(state.settings, req, res),
-  }), 'breeze-voice: balance route');
+  }), 'breezetts-dsh: balance route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: DESIGN_PATH,
     handler: (req, res) => handleDesign(state.settings, req, res),
-  }), 'breeze-voice: design route');
+  }), 'breezetts-dsh: design route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: DESIGN_AUDIO_PATH,
     handler: (req, res) => handleDesignAudio(req, res),
-  }), 'breeze-voice: design audio route');
+  }), 'breezetts-dsh: design audio route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
     path: DESIGN_SAVE_PATH,
     handler: (req, res) => handleDesignSave(state.settings, req, res),
-  }), 'breeze-voice: design save route');
+  }), 'breezetts-dsh: design save route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
@@ -257,7 +257,7 @@ export function apply(ctx, config = {}) {
     kind: 'exact',
     path: DEBUG_PATH,
     handler: (req, res) => handleDebug(req, res),
-  }), 'breeze-voice: debug route');
+  }), 'breezetts-dsh: debug route');
 
   ctx.effect(() => ctx.webServer.register({
     kind: 'exact',
@@ -265,7 +265,7 @@ export function apply(ctx, config = {}) {
     handler: (req, res) => {
       handleHealth(state.settings, req, res);
     },
-  }), 'breeze-voice: health route');
+  }), 'breezetts-dsh: health route');
 }
 
 /**

@@ -1,6 +1,6 @@
 {
   "name": "breezetts-dsh",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "description": "BreezeTTS for DSH — read assistant replies aloud, powered by Breeze CLI with the Breeze API as fallback",
   "type": "module",
@@ -32,5 +32,9 @@
         "@deepseek-ai/dsh-client-ui-chat"
       ]
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hangdingding/breezetts-dsh.git"
   }
 }

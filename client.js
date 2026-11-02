@@ -2263,16 +2263,16 @@ window.__ModuleLoader__.load({
           tag.textContent = CSS;
           document.head.appendChild(tag);
           return () => tag.remove();
-        }, 'breeze-voice: styles');
+        }, 'breezetts-dsh: styles');
 
-        ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'breeze-voice: dictionaries');
+        ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'breezetts-dsh: dictionaries');
 
         ctx.effect(() => {
           const timer = setTimeout(() => {
             void onboardIfNeeded();
           }, 2500);
           return () => clearTimeout(timer);
-        }, 'breeze-voice: onboarding');
+        }, 'breezetts-dsh: onboarding');
 
         ctx.slots.inject('conversation.chat.assistant-actions', () => ctx.slots.register({
           name: 'conversation.chat.assistant-actions',
